@@ -1,10 +1,5 @@
 import React from "react";
-import {
-  useParams,
-  useHistory,
-  useRouteMatch,
-  useLocation,
-} from "react-router-dom";
+import { useParams, useHistory } from "react-router-dom";
 
 import products from "../data/products.json";
 
@@ -12,13 +7,6 @@ const ProductDetails = () => {
   const { id } = useParams();
 
   const history = useHistory();
-  const location = useLocation();
-  const match = useRouteMatch();
-
-  console.log(match.params);
-  console.log(match.isExact);
-  console.log(match.path);
-  console.log(match.url);
 
   const selectedProduct = products.find(
     (product) => product.id === parseInt(id)

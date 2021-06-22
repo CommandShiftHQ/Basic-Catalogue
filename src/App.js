@@ -8,7 +8,8 @@ import {
 
 //components
 import products from './data/products.json';
-import ProductDetails from './components/ProductDetails'
+import ProductDetails from './components/ProductDetails';
+import PageNotFound from './components/PageNotFound';
 
 // mock data
 import ProductList from "./components/ProductList";
@@ -59,6 +60,9 @@ function App() {
           </Route>
           <Route exact path="/product/:id">
             <ProductDetails />
+          </Route>
+          <Route>
+            <PageNotFound />
           </Route>
         </Switch>
       </Router>
