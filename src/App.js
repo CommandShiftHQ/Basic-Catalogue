@@ -1,7 +1,10 @@
 import React from 'react';
-import { BrowserRouter as Router, Route, Switch, Link } from "react-router-dom";
+import { BrowserRouter as Router, Route, Switch, NavLink } from "react-router-dom";
+
+import './styles/app.css';
 
 function App() {
+
   return (
     <div className="App">
       <Router>
@@ -9,24 +12,24 @@ function App() {
         <nav>
           <ul>
             <li>
-              <Link to="/">
+              <NavLink activeClassName="selected-link" exact to="/">
                 Go to homepage
-              </Link>
+              </NavLink>
             </li>
             <li>
-              <Link to="/products">
+              <NavLink activeClassName="selected-link" to="/products">
                 Products
-              </Link>
+              </NavLink>
             </li>
             <li>
-              <Link to="/about">
+              <NavLink activeClassName="selected-link" to="/about">
                 About
-              </Link>
+              </NavLink>
             </li>
             <li>
-              <Link to="/contact-us">
+              <NavLink activeClassName="selected-link" to="/contact-us">
                 Contact
-              </Link>
+              </NavLink>
             </li>
           </ul>
         </nav>
