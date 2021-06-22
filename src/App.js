@@ -1,7 +1,9 @@
 import React from 'react';
-import { BrowserRouter as Router, Route, Switch, Link } from "react-router-dom";
+import { BrowserRouter as Router, Route, Switch, NavLink } from "react-router-dom";
 
 function App() {
+  const SelectedLink = { fontWeight: "bold", color: "green" };
+
   return (
     <div className="App">
     <Router>
@@ -9,24 +11,24 @@ function App() {
       <nav>
         <ul>
           <li>
-            <Link to="/">
+            <NavLink activeStyle={SelectedLink} exact to="/">
               Go to homepage
-            </Link>
+            </NavLink>
           </li>
           <li>
-            <Link to="/products">
+            <NavLink activeStyle={SelectedLink} to="/products">
               Products
-            </Link>
+            </NavLink>
           </li>
           <li>
-            <Link to="/about">
+            <NavLink activeStyle={SelectedLink} to="/about">
               About
-            </Link>
+            </NavLink>
           </li>
           <li>
-            <Link to="/contact-us">
+            <NavLink activeStyle={SelectedLink} to="/contact-us">
               Contact
-            </Link>
+            </NavLink>
           </li>
         </ul>
       </nav>
