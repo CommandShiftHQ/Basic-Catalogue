@@ -1,6 +1,15 @@
 import React from "react";
+import { useParams } from "react-router-dom";
+
+import products from "../data/products.json";
 
 const ProductDetails = () => {
+  const { id } = useParams();
+
+  const selectedProduct = products.find(
+    (product) => product.id === parseInt(id)
+  );
+
   const productListWrap = {
     maxWidth: "600px",
     marginLeft: "auto",
@@ -23,8 +32,13 @@ const ProductDetails = () => {
     <div style={productListWrap}>
       <div style={productItemWrap}>
         <div style={productListHeader}>
-          <div>Selected product</div>
+          <div>{selectedProduct.title}</div>
         </div>
+        <div>Rating: {selectedProduct.rating}</div>
+        <div>Description: {selectedProduct.description}</div>
+        <div>Type: {selectedProduct.type}</div>
+        <div>Weight: {selectedProduct.weight}g</div>
+        <div>£{selectedProduct.price.toFixed(2)}</div>
       </div>
     </div>
   );
