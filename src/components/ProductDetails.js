@@ -1,5 +1,5 @@
 import React from "react";
-import { useParams, useHistory } from "react-router-dom";
+import { useParams, useHistory, Redirect } from "react-router-dom";
 
 import products from "../data/products.json";
 
@@ -32,30 +32,36 @@ const ProductDetails = () => {
 
   return (
     <div style={productListWrap}>
-      <div style={productItemWrap}>
-        <div style={productListHeader}>
-          <div>{selectedProduct.title}</div>
-        </div>
-        <div>Rating: {selectedProduct.rating}</div>
-        <div>Description: {selectedProduct.description}</div>
-        <div>Type: {selectedProduct.type}</div>
-        <div>Weight: {selectedProduct.weight}g</div>
-        <div>£{selectedProduct.price.toFixed(2)}</div>
-      </div>
-      <button
-        onClick={() => {
-          history.goBack();
-        }}
-      >
-        Go back
-      </button>
-      <button
-        onClick={() => {
-          history.goForward();
-        }}
-      >
-        Forward
-      </button>
+      {!selectedProduct ? (
+        <Redirect to="/404" />
+      ) : (
+        <>
+          <div style={productItemWrap}>
+            <div style={productListHeader}>
+              <div>{selectedProduct.title}</div>
+            </div>
+            <div>Rating: {selectedProduct.rating}</div>
+            <div>Description: {selectedProduct.description}</div>
+            <div>Type: {selectedProduct.type}</div>
+            <div>Weight: {selectedProduct.weight}g</div>
+            <div>£{selectedProduct.price.toFixed(2)}</div>
+          </div>
+          <button
+            onClick={() => {
+              history.goBack();
+            }}
+          >
+            Go back
+          </button>
+          <button
+            onClick={() => {
+              history.goForward();
+            }}
+          >
+            Forward
+          </button>
+        </>
+      )}
     </div>
   );
 };
