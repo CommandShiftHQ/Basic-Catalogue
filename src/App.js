@@ -6,6 +6,12 @@ import {
   NavLink,
 } from "react-router-dom";
 
+//components
+import products from './data/products.json';
+
+// mock data
+import ProductList from "./components/ProductList";
+
 function App() {
   const SelectedLink = { fontWeight: "bold", color: "green" };
 
@@ -42,7 +48,7 @@ function App() {
             <h1>Home</h1>
           </Route>
           <Route exact path="/products">
-            <h1>Products</h1>
+            <ProductList products={products} />
           </Route>
           <Route exact path="/about">
             <h1>About</h1>
