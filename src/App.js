@@ -3,10 +3,10 @@ import {
   BrowserRouter as Router,
   Route,
   Switch,
-  NavLink,
 } from "react-router-dom";
 
 //components
+import Navigation from './components/Navigation';
 import products from './data/products.json';
 import ProductDetails from './components/ProductDetails';
 import PageNotFound from './components/PageNotFound';
@@ -15,36 +15,11 @@ import PageNotFound from './components/PageNotFound';
 import ProductList from "./components/ProductList";
 
 function App() {
-  const SelectedLink = { fontWeight: "bold", color: "green" };
-
   return (
     <div className="App">
       <Router>
         <h1>Example shop</h1>
-        <nav>
-          <ul>
-            <li>
-              <NavLink activeStyle={SelectedLink} exact to="/">
-                Go to homepage
-              </NavLink>
-            </li>
-            <li>
-              <NavLink activeStyle={SelectedLink} to="/products">
-                Products
-              </NavLink>
-            </li>
-            <li>
-              <NavLink activeStyle={SelectedLink} to="/about">
-                About
-              </NavLink>
-            </li>
-            <li>
-              <NavLink activeStyle={SelectedLink} to="/contact-us">
-                Contact
-              </NavLink>
-            </li>
-          </ul>
-        </nav>
+        <Navigation />
         <Switch>
           <Route exact path="/">
             <h1>Home</h1>
