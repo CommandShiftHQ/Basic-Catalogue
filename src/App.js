@@ -1,10 +1,11 @@
 import React from 'react';
 import { BrowserRouter as Router, Route, Switch, NavLink } from "react-router-dom";
 
-//components
+// mock data
 import products from './data/products.json';
 
-// mock data
+// components
+import ProductDetails from './components/ProductDetails';
 import ProductList from "./components/ProductList";
 
 import './styles/app.css';
@@ -51,6 +52,9 @@ function App() {
           </Route>
           <Route exact path="/contact-us">
             <h1>Contact us</h1>
+          </Route>
+          <Route exact path="/product/:id">
+            <ProductDetails />
           </Route>
         </Switch>
       </Router>
