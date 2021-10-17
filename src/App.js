@@ -5,6 +5,7 @@ import { BrowserRouter as Router, Route, Switch, NavLink } from "react-router-do
 import products from './data/products.json';
 
 // components
+import PageNotFound from './components/PageNotFound';
 import ProductDetails from './components/ProductDetails';
 import ProductList from "./components/ProductList";
 
@@ -55,6 +56,9 @@ function App() {
           </Route>
           <Route exact path="/product/:id">
             <ProductDetails />
+          </Route>
+          <Route>
+            <PageNotFound />
           </Route>
         </Switch>
       </Router>
