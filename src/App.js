@@ -1,5 +1,5 @@
 import React from 'react';
-import { BrowserRouter as Router, Route, Switch } from "react-router-dom";
+import { Redirect, BrowserRouter as Router, Route, Switch } from "react-router-dom";
 
 // mock data
 import products from './data/products.json';
@@ -33,8 +33,9 @@ function App() {
           <Route exact path="/product/:id">
             <ProductDetails />
           </Route>
+          <Route exact path="/404" component={PageNotFound} />
           <Route>
-            <PageNotFound />
+            <Redirect to="/404" />
           </Route>
         </Switch>
       </Router>
