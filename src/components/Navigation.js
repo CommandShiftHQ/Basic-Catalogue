@@ -1,29 +1,29 @@
 import React from "react";
 import { NavLink } from "react-router-dom";
 
-const Navigation = () => {
-  const SelectedLink = { fontWeight: "bold", color: "green" };
+import "../styles/navigation.css";
 
+const Navigation = () => {
   return (
     <nav>
       <ul>
         <li>
-          <NavLink activeStyle={SelectedLink} exact to="/">
+          <NavLink activeClassName="selected-link" exact to="/">
             Go to homepage
           </NavLink>
         </li>
         <li>
-          <NavLink activeStyle={SelectedLink} to="/products">
+          <NavLink activeClassName="selected-link" to="/products">
             Products
           </NavLink>
         </li>
         <li>
-          <NavLink activeStyle={SelectedLink} to="/about">
+          <NavLink activeClassName="selected-link" to="/about">
             About
           </NavLink>
         </li>
         <li>
-          <NavLink activeStyle={SelectedLink} to="/contact-us">
+          <NavLink activeClassName="selected-link" to="/contact-us">
             Contact
           </NavLink>
         </li>

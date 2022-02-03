@@ -1,31 +1,15 @@
 import React from "react";
 import { Link } from "react-router-dom";
 
+import "../styles/product-list.css"
+
 const ProductList = ({ products }) => {
-  const productListWrap = {
-    maxWidth: "600px",
-    marginLeft: "auto",
-    marginRight: "auto",
-  };
-
-  const productListHeader = {
-    display: "flex",
-    justifyContent: "space-evenly",
-    marginBottom: "10px",
-  };
-
-  const productItemWrap = {
-    border: "2px solid black",
-    padding: "10px",
-    marginBottom: "30px",
-  };
-
   return (
-    <div style={productListWrap}>
+    <div className="product-list-wrap">
       {products.map((product) => {
         return (
-          <div key={product.id} style={productItemWrap}>
-            <div style={productListHeader}>
+          <div key={product.id} className="product-item-wrap">
+            <div className="product-list-header">
               <div>{product.title}</div>
               <div>{product.rating}</div>
             </div>

@@ -1,21 +1,17 @@
-import React from "react";
-import {
-  BrowserRouter as Router,
-  Redirect,
-  Route,
-  Switch,
-} from "react-router-dom";
-
-//components
-import Navigation from './components/Navigation';
-import products from './data/products.json';
-import ProductDetails from './components/ProductDetails';
-import PageNotFound from './components/PageNotFound';
+import React from 'react';
+import { Redirect, BrowserRouter as Router, Route, Switch } from "react-router-dom";
 
 // mock data
+import products from './data/products.json';
+
+// components
+import Navigation from './components/Navigation';
+import PageNotFound from './components/PageNotFound';
+import ProductDetails from './components/ProductDetails';
 import ProductList from "./components/ProductList";
 
 function App() {
+
   return (
     <div className="App">
       <Router>

@@ -1,7 +1,9 @@
 import React from "react";
-import { useParams, useHistory, Redirect } from "react-router-dom";
+import { Redirect, useHistory, useParams } from "react-router-dom";
 
 import products from "../data/products.json";
+
+import "../styles/product-details.css";
 
 const ProductDetails = () => {
   const { id } = useParams();
@@ -12,32 +14,14 @@ const ProductDetails = () => {
     (product) => product.id === parseInt(id)
   );
 
-  const productListWrap = {
-    maxWidth: "600px",
-    marginLeft: "auto",
-    marginRight: "auto",
-  };
-
-  const productListHeader = {
-    display: "flex",
-    justifyContent: "space-evenly",
-    marginBottom: "10px",
-  };
-
-  const productItemWrap = {
-    border: "2px solid black",
-    padding: "10px",
-    marginBottom: "30px",
-  };
-
   return (
-    <div style={productListWrap}>
+    <div className="product-list-wrap">
       {!selectedProduct ? (
         <Redirect to="/404" />
       ) : (
         <>
-          <div style={productItemWrap}>
-            <div style={productListHeader}>
+          <div className="product-item-wrap">
+            <div className="product-list-header">
               <div>{selectedProduct.title}</div>
             </div>
             <div>Rating: {selectedProduct.rating}</div>
